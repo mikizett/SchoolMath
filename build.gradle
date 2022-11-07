@@ -11,6 +11,8 @@ plugins {
     id 'eclipse'
 }
 
+//mainClassName = 'de.mz.schoolmath.SchoolMathMain'
+
 repositories {
     mavenCentral()
 }
