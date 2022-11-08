@@ -39,19 +39,12 @@ public class TextLabelPropertiesTest {
     @Test
     @DisplayName("Should fire text label change if DE text label properties are loaded")
     void testFireTextLabelChange() throws IOException {
-        final HostTextLabelChangeListener listener = Mockito.mock(HostTextLabelChangeListener.class);
+        final TextLabelProperties.TextLabelChangeListener listener = Mockito.mock(TextLabelProperties.TextLabelChangeListener.class);
 
         textLabelProperties.registerTextLabelChangeListener(listener);
 
         textLabelProperties.loadTextProperties(TextLabelFile.DE);
-        
-        Mockito.verify(listener, Mockito.times(1)).textLabelChanged();
-    }
 
-    public static class HostTextLabelChangeListener implements TextLabelProperties.TextLabelChangeListener {
-        @Override
-        public void textLabelChanged() {
-            Assertions.assertTrue(true);
-        }
+        Mockito.verify(listener, Mockito.times(1)).textLabelChanged();
     }
 }
