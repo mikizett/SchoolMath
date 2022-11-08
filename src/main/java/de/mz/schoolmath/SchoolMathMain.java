@@ -1,6 +1,7 @@
 package de.mz.schoolmath;
 
-import de.mz.schoolmath.ui.TextProperties;
+import de.mz.schoolmath.ui.TextLabelFile;
+import de.mz.schoolmath.ui.TextLabelProperties;
 import de.mz.schoolmath.util.UIMessageUtil;
 
 import javax.swing.UIManager;
@@ -30,7 +31,7 @@ public class SchoolMathMain {
         }
         EventQueue.invokeLater(() -> {
             try {
-                TextProperties.getInstance().loadTextProperties();
+                TextLabelProperties.getInstance().loadTextProperties(TextLabelFile.DE);
             } catch (Exception e) {
                 UIMessageUtil.showErrMsg("Textdatei konnte nicht geladen werden!");
             }
