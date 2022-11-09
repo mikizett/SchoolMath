@@ -1,4 +1,4 @@
-package de.mz.schoolmath.ui;
+package de.mz.schoolmath.i18n;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
@@ -9,31 +9,28 @@ import java.io.IOException;
 
 @DisplayName("Test TextLabelProperties")
 public class TextLabelPropertiesTest {
-
-    private final TextLabelProperties textLabelProperties = TextLabelProperties.getInstance();
-
     @Test
     @DisplayName("Should load DE text label properties successful")
     void testLoadTextLabelDE() throws IOException {
-        textLabelProperties.loadTextProperties(TextLabelFile.DE);
+        TextLabelProperties.loadTextProperties(TextLabelFile.DE);
 
-        Assertions.assertEquals("german", textLabelProperties.get("german"));
+        Assertions.assertEquals("german", TextLabelProperties.get("german"));
     }
 
     @Test
     @DisplayName("Should load default DE text label properties successful if TextLabelFile is null")
     void testLoadDefaultTextLabelDEIfTextLabelFileNull() throws IOException {
-        textLabelProperties.loadTextProperties(null);
+        TextLabelProperties.loadTextProperties(null);
 
-        Assertions.assertEquals("german", textLabelProperties.get("german"));
+        Assertions.assertEquals("german", TextLabelProperties.get("german"));
     }
 
     @Test
     @DisplayName("Should load EN text label properties successful")
     void testLoadTextLabelEN() throws IOException {
-        textLabelProperties.loadTextProperties(TextLabelFile.EN);
+        TextLabelProperties.loadTextProperties(TextLabelFile.EN);
 
-        Assertions.assertEquals("english", textLabelProperties.get("english"));
+        Assertions.assertEquals("english", TextLabelProperties.get("english"));
     }
 
     @Test
@@ -41,9 +38,9 @@ public class TextLabelPropertiesTest {
     void testFireTextLabelChange() throws IOException {
         final TextLabelProperties.TextLabelChangeListener listener = Mockito.mock(TextLabelProperties.TextLabelChangeListener.class);
 
-        textLabelProperties.registerTextLabelChangeListener(listener);
+        TextLabelProperties.registerTextLabelChangeListener(listener);
 
-        textLabelProperties.loadTextProperties(TextLabelFile.DE);
+        TextLabelProperties.loadTextProperties(TextLabelFile.DE);
 
         Mockito.verify(listener, Mockito.times(1)).textLabelChanged();
     }

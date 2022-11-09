@@ -1,4 +1,4 @@
-package de.mz.schoolmath.ui;
+package de.mz.schoolmath.i18n;
 
 public enum TextLabelFile {
     DE("TextLabels_DE.properties"),
