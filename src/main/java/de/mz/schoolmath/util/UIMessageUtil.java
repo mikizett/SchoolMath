@@ -1,7 +1,7 @@
 package de.mz.schoolmath.util;
 
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.JOptionPane;
+import java.awt.Component;
 
 public final class UIMessageUtil {
 

@@ -1,6 +1,6 @@
 package de.mz.schoolmath.ui;
 
-import de.mz.schoolmath.model.OrderType;
+import de.mz.schoolmath.model.MathTaskType;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -45,8 +45,8 @@ public final class TextLabelProperties {
         return props.getProperty(key);
     }
 
-    public String get(String key, OrderType orderType) {
-        return props.getProperty(key + orderType.getValue());
+    public String get(String key, MathTaskType mathTaskType) {
+        return props.getProperty(key + mathTaskType.getValue());
     }
 
     public static interface TextLabelChangeListener {
